@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: url("../images/bgStage1.jpg") no-repeat fixed center;
+    background-color: rgb(34, 3, 3);
+    background-size: cover;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 700px;
+    z-index: 1;
+}
+
+.displaySection {
+    background-color:transparent;
+    border: 2px solid #470808;
+    background: linear-gradient(90deg, #3b100c 0%, #b31f1f 100%);
+    height: 220px;
+    width: 560px;
+    text-align: center;
+    padding-top: 80px;
+    clip-path: polygon(68% 5%, 92% 6%, 100% 23%, 100% 100%, 0 100%, 0 23%, 45% 15%);
+    font-family: "Oswald", sans-serif;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.displaySection > .displaySection-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+.displaySection > .displaySection-1 > #toggleButton {
+    width: 120px;
+    height: 60px;
+    padding: 10px 10px;
+    font-size: 20px;
+    background-color: #3d0303;
+    color: rgba(255, 255, 255, 0.468);
+    border: 1px solid rgba(255, 255, 255, 0.468);
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+  
+  .displaySection > .displaySection-1 > #toggleButton.on {
+    color: rgba(255, 255, 255, 0.92);;
+    border-color: rgba(255, 255, 255, 0.92);;
+  }  
+
+  .displaySection > .displaySection-1 > .pianoKeyText {
+    display: inline;
+    color: rgb(255, 225, 225);;
+    min-width: 120px;
+    min-height: 120px;
+    padding: 0px 20px;
+    border: 2px solid rgba(255, 255, 255, 0.92);
+    border-radius: 15px;
+    margin-bottom: 10px;
+    /* From Glassmorphism Effect */
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(4.8px);
+    -webkit-backdrop-filter: blur(4.8px);
+    border: 1px solid rgba(255, 255, 255, 0.92);
+  }
+
+  .displaySection > .displaySection-1 > .pianoKeyText > #pianoKey {
+    display: none;
+    font-size: 80px;
+    animation: bounceInUp;
+    animation-duration: 3s;
+  }
+
+.piano {
+    width: 100px;
+    height: 100px;
+}
+
+.pianoSection {
+    display: flex;
+    height: 300px;
+    width: 560px;
+    box-shadow: 10px -15px 25px 9px rgb(7, 7, 7);
+    border-radius: 0px 0px 10px 10px;
+}
+
+.WhiteKey {
+    border: 1px solid #0f0f0fe7;
+    background: linear-gradient(76deg, #c0c1c2 20%, #fff 100%);
+    height: 300px;
+    width: 70px;
+    padding: 3px;
+    z-index: 2;
+    border-radius: 0px 0px 10px 10px;
+}
+
+h2 {
+    margin-top: 265px;
+    margin-left: 15px;
+    color: rgb(115, 115, 117);
+    font-weight: 80;
+}
+
+.BlacKKey {
+    background-color:black;
+    height: 200px;
+    width: 61px;
+    margin-left:-39px;
+    margin-right: -28px; 
+    border-radius: 0px 0px 10px 10px;
+    z-index: 3;
+}
+
+.WhiteKey:hover{
+    background: linear-gradient(76deg, #aaacac 100%, #fff 100%);
+}
+
+.BlacKKey:hover {
+    background: linear-gradient(180deg, #3f3d3d 100%,#5a5858f1 0%);
+}
+
+
+@media screen and (max-width: 767px) {
+    body {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+    }
+    .wrapper {
+        height: 350px;
+        z-index: -1;
+        margin-top: 150px;
+    }
+    
+    .displaySection {
+        height: 110px;
+        height: 50%;
+        width: 255px;
+        padding-top: 40px;
+    }
+    
+    .displaySection > .displaySection-1 > #toggleButton {
+        width: 70%;
+        height: 32%;
+        padding: 10px 10px;
+        font-size: 13px;
+    }
+    
+    .displaySection > .displaySection-1 > .pianoKeyText {
+        display: inline;
+        color: rgb(255, 225, 225);
+        min-width: 60px;
+        min-height: 60px;
+        padding: 0px 24px;
+        border: 1px solid rgba(255, 255, 255, 0.92);
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+    
+    .displaySection > .displaySection-1 > .pianoKeyText > #pianoKey {
+        font-size: 40px;
+    }
+
+    .displaySection > .displaySection-2 > #displayText {
+        font-size: 20px;
+    }
+    
+    .piano {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .pianoSection {
+        display: flex;
+        height: 150px;
+        width: 255px;
+    }
+    
+    .WhiteKey {
+        height: 150px;
+        width: 35px;
+    }
+    
+    h2 {
+        margin-top: 120px;
+        margin-left: 5px;
+        font-weight: 1;
+        font-size: 15px;
+    }
+    
+    .BlacKKey {
+        height: 100px;
+        width: 25px;
+        margin-left:-17px;
+        margin-right: -14px;
+    }
+}
+

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Razi Azam">
+    <meta name="description" content="A simple grand piano app in jS by Rai Azam">
+    <meta keywords="" content="Grand Piano App, HTML5, CSS3, javaScript">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Grand Piano by Razi Azam</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+</head>
+<body>
+    <div class="wrapper">
+            <div class="displaySection">
+                <div class="displaySection-1">
+                    <button id="toggleButton">Light Off</button>
+                    <div class="pianoKeyText">
+                        <h1 id="pianoKey">Key</h1>
+                    </div>
+                </div>
+                <div class="displaySection-2">
+                    <img src="./images/piano.png" alt="pianoImage" class="piano">
+                    <h1 id="displayText">Grand Piano</h1>
+                </div>
+            </div>
+            <div class="pianoSection">
+                <!-- Divs for piano keys 
+                8 white keys ( C3 to C4) and 6 black keys or 
+                5 sharp notes ( C#3 to A#3)-->
+                <div class="WhiteKey pianoKey" data-note="C3"><h2> C3</h2></div>
+                <div class="BlacKKey pianoKey" data-note="C#3"></div>
+                <div class="WhiteKey pianoKey" data-note="D3"></div>
+                <div class="BlacKKey pianoKey" data-note="D#3"></div>
+                <div class="WhiteKey pianoKey" data-note="E3"></div>
+                <div class="WhiteKey pianoKey" data-note="F3"></div>
+                <div class="BlacKKey pianoKey" data-note="F#3"></div>
+                <div class="WhiteKey pianoKey" data-note="G3"></div>
+                <div class="BlacKKey pianoKey" data-note="G#3"></div>
+                <div class="WhiteKey pianoKey" data-note="A3"></div>
+                <div class="BlacKKey pianoKey" data-note="A#3"></div>
+                <div class="WhiteKey pianoKey" data-note="B3"></div>
+                <div class="WhiteKey pianoKey" data-note="C4"><h2> C4</h2></div>
+            </div>
+    </div>
+    <!-- to import audio files for each piano keys-->
+    <audio src="audio/C3.mp3"  id="C3"></audio>
+    <audio src="audio/CSharp3.mp3" id="C#3"></audio>
+    <audio src="audio/D3.mp3" id="D3"></audio>
+    <audio src="audio/DSharp3.mp3" id="D#3"></audio>
+    <audio src="audio/E3.mp3" id="E3"></audio>
+    <audio src="audio/F3.mp3" id="F3"></audio>
+    <audio src="audio/FSharp3.mp3" id="F#3"></audio>
+    <audio src="audio/G3.mp3" id="G3"></audio>
+    <audio src="audio/GSharp3.mp3" id="G#3"></audio>
+    <audio src="audio/A3.mp3" id="A3"></audio>
+    <audio src="audio/ASharp3.mp3" id="A#3"></audio>
+    <audio src="audio/B3.mp3" id="B3"></audio>
+    <audio src="audio/C4.mp3" id="C4"></audio>
+
+    <script src="./script/myScript.js"></script>
+</body>
+</html>
