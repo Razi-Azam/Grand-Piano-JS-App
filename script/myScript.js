@@ -83,20 +83,20 @@ function hideDisplayElements() {
     displayKey.style.transition = "display 0s 2s, opacity 2s linear";
 }
 
-//Hide the displayKey (piano Note) after 2 seconds of inactivity
-let timerId;
+// //Hide the displayKey (piano Note) after 2 seconds of inactivity
+// let timerId;
 
-//clears the existing (if any) and sets a new timer     
-function resetTimer() {
-    clearTimeout(timerId);
-    timerId = setTimeout(hideDisplayElements, 10000); // 2 seconds (2000ms) timer
-}
+// //clears the existing (if any) and sets a new timer     
+// function resetTimer() {
+//     clearTimeout(timerId);
+//     timerId = setTimeout(hideDisplayElements, 10000); // 2 seconds (2000ms) timer
+// }
 
-// Listen for mousemove. mousedown, keypress events on the document
-document.addEventListener('mousemove', resetTimer);
-document.addEventListener('mousedown', resetTimer);
-document.addEventListener('keypress', resetTimer);
-document.addEventListener('keydown', resetTimer);
+// // Listen for mousemove. mousedown, keypress events on the document
+// document.addEventListener('mousemove', resetTimer);
+// document.addEventListener('mousedown', resetTimer);
+// document.addEventListener('keypress', resetTimer);
+// document.addEventListener('keydown', resetTimer);
 
 // // Hide the text initially after 2 seconds of inactivity
 // timerId = setTimeout(hideDisplayElements, 2000);
