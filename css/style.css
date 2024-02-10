@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
 
+
 * {
     margin: 0;
     padding: 0;
@@ -57,8 +58,8 @@ body {
   }
   
   .displaySection > .displaySection-1 > #toggleButton.on {
-    color: rgba(255, 255, 255, 0.92);;
-    border-color: rgba(255, 255, 255, 0.92);;
+    color: rgba(255, 255, 255, 0.92);
+    border-color: rgba(255, 255, 255, 0.92);
   }  
 
   .displaySection > .displaySection-1 > .pianoKeyText {
@@ -84,6 +85,11 @@ body {
     font-size: 80px;
     animation: bounceInUp;
     animation-duration: 3s;
+  }
+
+  .displaySection > .displaySection-2 > h1 {
+    color: rgb(247, 249, 229);
+    text-shadow: #000 2px 5px 10px;
   }
 
 .piano {
