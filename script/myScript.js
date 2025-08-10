@@ -6,11 +6,13 @@ const bgLightOn = new Image();
 bgLightOn.src = "./images/bgStage2.jpg";
 
 
-
-
 //get the elements light toggle button, piano keys, text, and image
 const toggleButton = document.getElementById('toggleButton');
 const displayKey = document.getElementById("pianoKey");
+
+let noteTimer = null;
+const NOTE_DISPLAY_MS = 800; // in ms - how long note stays visible
+
 const displayText = document.getElementById("displayText");
 const pianoImage = document.querySelector(".piano");
 var bodyStyle = document.body.style;
@@ -58,7 +60,6 @@ document.addEventListener('keydown', function(event) {
 
 //definition of the function named playPiano
 function playPiano(pianoKey, eventType) {
-
     if(eventType === "keydown") {
         const pianoAudio = document.getElementById(pianoKey);
         pianoAudio.currentTime = 1;
@@ -79,34 +80,28 @@ function displayPianoNote(TextNote) {
     const keyElement = document.getElementById(TextNote);
     const keyNotes = ["C3", "C#3", "D3", "D#3", "E3", "F3", "F#3", "G3", "G#3", "A3", "A#3", "B3", "C4" ];
 
-    if(keyNotes.includes(TextNote)) {
-        displayKey.innerText = TextNote;
-    }
+    // if(keyNotes.includes(TextNote)) {
+    //     displayKey.innerText = TextNote;
+    // }
 
-    displayKey.style.display = "inline";
+    if (!keyNotes.includes(TextNote)) return;
+
+    displayKey.textContent = TextNote;
+
+    //retrigger CSS animation
+    displayKey.classList.remove('visible'); //emove animation class
+    //force browser to reflow (reset animation)
+    void displayKey.offsetWidth;
+    displayKey.classList.add('visible'); //add animation class back
+    
+    if (noteTimer) clearTimeout(noteTimer);
+    
+    noteTimer = setTimeout(() => {
+        displayKey.classList.remove('visible');
+    }, NOTE_DISPLAY_MS);
 }
 
 function hideDisplayElements() {
-    displayKey.style.display = "none";
-    //fade out effect animation
-    displayKey.style.opacity ="0";
-    displayKey.style.transition = "display 0s 2s, opacity 2s linear";
+    if (noteTimer) clearTimeout(noteTimer);
+  displayKey.classList.remove('visible');
 }
-
-// //Hide the displayKey (piano Note) after 2 seconds of inactivity
-// let timerId;
-
-// //clears the existing (if any) and sets a new timer     
-// function resetTimer() {
-//     clearTimeout(timerId);
-//     timerId = setTimeout(hideDisplayElements, 10000); // 2 seconds (2000ms) timer
-// }
-
-// // Listen for mousemove. mousedown, keypress events on the document
-// document.addEventListener('mousemove', resetTimer);
-// document.addEventListener('mousedown', resetTimer);
-// document.addEventListener('keypress', resetTimer);
-// document.addEventListener('keydown', resetTimer);
-
-// // Hide the text initially after 2 seconds of inactivity
-// timerId = setTimeout(hideDisplayElements, 2000);
