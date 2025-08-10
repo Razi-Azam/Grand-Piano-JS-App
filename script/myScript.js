@@ -54,6 +54,7 @@ document.addEventListener('keydown', function(event) {
     const keyNote = keyMap[boardkey];
 
     if (keyNote) {
+        event.preventDefault();
         playPiano(keyNote, "keydown");
     }
 });
