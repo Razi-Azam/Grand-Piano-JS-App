@@ -1,3 +1,13 @@
+// Preload the background images for light on and off
+const bgLightOff = new Image();
+bgLightOff.src = "./images/bgStage1.jpg";
+
+const bgLightOn = new Image();
+bgLightOn.src = "./images/bgStage2.jpg";
+
+
+
+
 //get the elements light toggle button, piano keys, text, and image
 const toggleButton = document.getElementById('toggleButton');
 const displayKey = document.getElementById("pianoKey");
